@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [date, setDate] = useState(new Date());
+
+    let watch = `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setDate(new Date())
+        }, 1000)
+        return () => clearInterval(intervalId);
+    }, [])
+
+    return (
+        <div style={{
+            height: '100vh',
+            margin: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '200px',
+            backgroundColor: 'black',
+            color: 'aquamarine',
+        }}>
+            {watch}
+        </div>
+    );
 }
 
 export default App;
