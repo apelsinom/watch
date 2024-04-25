@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import {WatchElectron} from "./components/WatchElectron/WatchElectron";
+import {WatchAnalog} from "./components/WatchAnalog/WatchAnalog";
+import './App.css';
 
 function App() {
     const [date, setDate] = useState(new Date());
-
-    let watch = `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
+    const [changeWatch, setChangeWatch] = useState(true);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -12,18 +14,12 @@ function App() {
         return () => clearInterval(intervalId);
     }, [])
 
+    const showWatchHandler = () => setChangeWatch(!changeWatch);
+
     return (
-        <div style={{
-            height: '100vh',
-            margin: 0,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: '200px',
-            backgroundColor: 'black',
-            color: 'aquamarine',
-        }}>
-            {watch}
+        <div className="App">
+            <h1 className="click" onClick={showWatchHandler}>Click me</h1>
+            {changeWatch ? <WatchElectron date={date}/> : <WatchAnalog date={date} />}
         </div>
     );
 }
