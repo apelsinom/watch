@@ -71,6 +71,7 @@
             justify-content: center;
             position: relative;
             border-radius: 50%;
+            transition: transform 250ms ease-in-out;
             &:before {
                 content: '';
                 position: absolute;
