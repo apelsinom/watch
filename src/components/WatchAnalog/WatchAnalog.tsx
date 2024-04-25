@@ -45,7 +45,7 @@ export const WatchAnalog = ({date}: Props) => {
                     <div className={s.seconds} style={{transform: `rotate(${secondRotation}deg)`}}></div>
                 </div>
             </div>
-            <h1 className={s.click} onClick={changeWatchHandler}>Change watch face</h1>
+            <h1 className={s.click} onClick={changeWatchHandler}>Click for change watch face</h1>
         </>
     );
 };

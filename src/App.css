@@ -1,17 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #091921;
 }
+.App{
+    width: 100vw;
+    height: 100vh;
+
+}
 .click {
     cursor: pointer;
     color: rgba(100, 149, 237, 0.52);
-    font-size: 50px;
+    font-size: 5vw;
     text-align: center;
 }

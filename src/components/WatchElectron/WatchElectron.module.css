@@ -1,4 +1,6 @@
 .watch {
-    font-size: 300px;
+    width: fit-content;
+    margin: auto;
+    font-size: 20vw;
     color: aquamarine;
 }
