@@ -88,6 +88,7 @@
 }
 .click {
     cursor: pointer;
+    user-select: none;
     color: rgba(100, 149, 237, 0.52);
     font-size: 5vw;
     text-align: center;

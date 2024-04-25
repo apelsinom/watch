@@ -1,5 +1,6 @@
 .watch {
     width: fit-content;
+    user-select: none;
     margin: auto;
     font-size: 20vw;
     color: aquamarine;
